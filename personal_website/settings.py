@@ -28,12 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'k!d$66q9lc&c@yub)ihvbmlc7tx+ndn8bi(vh%%3i9*=7$8mc(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+#DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
 
-ALLOWED_HOSTS = [
-    '*'
-]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -81,7 +79,7 @@ WSGI_APPLICATION = 'personal_website.wsgi.application'
 # added
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
