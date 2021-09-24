@@ -4,7 +4,10 @@ from django.http import HttpResponse
 from .models import Article
 
 def default(request):
-    return HttpResponse("hello")
+    return render(request, "home/index.html", {
+        "lang": 'en',
+        "section": "index"
+    })
 
 # Create your views here.
 def index(request, lang):
