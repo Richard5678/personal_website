@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Richard Fan</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="{% static 'home/style.css' %}" rel="stylesheet">
+        <link href="{% static 'home/blog.css' %}" rel="stylesheet">
+        <script src="{% static 'home/home.js' %}"></script>
+    </head>
+
+    <body>
+        
+        <nav class="nav-bars">
+            <div id="header">
+                
+                <ul style="float: left">
+                        <script>
+                            function updateLang(type) {
+                                console.log(type);
+                                var url;
+                                if (type == 'en') {
+                                    url = console.log(window.location.href.replace("zh", "en"));
+                                } else {
+                                    url = console.log(window.location.href.replace("en", "zh"));
+                                }
+
+                                window.location.href = url;
+                                
+                            }
+                            
+                        </script>
+                        
+                        <li><a href="zh" >中文</a></li>
+                        <li><a href="en">English</a></li>
+
+                </ul>
+                <ul style="float: right">
+                        <li><a href="{% url 'index' lang %}" id="about">About</a></li>
+                        <li><a href="{% url 'blog' lang %}" id="blog">Blog</a></li>
+                 
+                </ul>
+                
+            </div>
+           
+        </nav>
+        <hr style="width:90%; margin-left:5% !important; margin-right:5% !important;" />
+
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

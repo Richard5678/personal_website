@@ -1,0 +1,86 @@
+{% extends "home/layout.html" %}
+{% block body %}
+{% load static %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLangBank("{{ lang }}");
+        });
+    </script>
+    <script src="{% static 'home/bank.js' %}"></script>
+    <div class="container">
+        <h1 id="bank-heading"></h1>
+        <div id="bank-date"></div>
+        <hr>
+
+        <div class="blog-text"> 
+            <div style="line-height: 200%">
+                <h1 id="blog-int-t"></h1> 
+                <hr>
+                <div id="bank-intro"></div>
+                <span class="paragraph">
+                    <h1 id="blog-mot-t"></h1>
+                    <hr>
+                    <div id="bank-motivation"></div>
+                    <br>
+
+                    <span class="paragraph"></span>
+                </span>
+                <h1 id="blog-body-t"></h1>
+                <hr>
+                <div id="body1"></div>
+
+                <br>
+                <div id="body2"></div>
+                
+                <br>
+                <span class="paragraph"></span>
+                <ul>
+                    <li>
+                        <div id="body3"></div>
+                        
+                        <ol style="margin-left: 40px;">
+                            <li><div id="body4"></div></li>
+                            <li><div id="body5"></div></li>
+                        </ol>
+                        <div id="body6"></div>
+                        <br>
+                    </li>
+                    
+                    <span class="paragraph"></span>
+                    <li>
+                        <div id="body7"></div>
+                        
+                        <ol style="margin-left: 40px;">
+                            <li><div id="body8"></div></li>
+                            <li><div id="body9"></div></li>
+                            <li><div id="body10"></div></li>
+                        </ol>
+                        <div id="body11"></div>
+                        
+                        <br>
+                        <div id="body12"></div>
+                        
+                        <br>
+                        <div id="body13"></div>
+                        
+                        <span class="paragraph"></span>
+                        <div id="body14"></div>
+                        
+                    </li>
+                </ul>
+                <span style="display: block;
+                margin-top: 50px;
+                margin-bottom: 50px;"></span>
+                <div id="body15"></div>
+                
+                <span class="paragraph"></span>
+                <div id="body16"></div>
+                
+                <span class="paragraph"></span>
+                <div id="body17"></div>
+                
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
