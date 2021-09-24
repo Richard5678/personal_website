@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from .models import Article
 
+def default(request):
+    return HttpResponse("hello")
 
 # Create your views here.
 def index(request, lang):

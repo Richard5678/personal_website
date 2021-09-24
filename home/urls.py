@@ -4,6 +4,7 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    path("", views.default, name="index"),
     path("<str:lang>", views.index, name="index"),
     path("wechat/<str:lang>", views.wechat, name="wechat"),
     path("blog/<str:lang>", views.blog, name="blog"),
