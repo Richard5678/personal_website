@@ -80,14 +80,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'personal_website.wsgi.application'
 
 # added
-#CSRF_COOKIE_SECURE = True
-#SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
-#SECURE_HSTS_SECONDS = 31536000
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-#SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
-HOST_SCHEME = "http://"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -140,7 +139,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #this is not used
 # Add static folder to STATIC_DIRS
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'home/static'),
 ]
 
 STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
