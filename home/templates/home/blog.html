@@ -5,29 +5,31 @@
             changeLangNav("{{ lang }}");
         });
     </script>
-    
-    {% if en %}
-        {% for article in articles %} 
-            <div class="blog-section">
-                <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleEn }}</a></h1>
-                <br> {{ article.date }}
-                <div class="blog-intro">
-                    {{ article.introEn }}
+    <div class="body">
+        {% if en %}
+            {% for article in articles reversed %} 
+                <div class="blog-section">
+                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleEn }}</a></h1>
+                    <br> {{ article.date }}
+                    <div class="blog-intro">
+                        {{ article.introEn }}
+                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
-        {% endfor %}
-    {% else %}
-        {% for article in articles %}
-            <div class="blog-section">
-                <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleZh }}</a></h1>
-                <br> {{ article.date }}å
-                <div class="blog-intro">
-                    {{ article.introZh }}
+            {% endfor %}
+        {% else %}
+            {% for article in articles reversed %}
+                <div class="blog-section">
+                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleZh }}</a></h1>
+                    <br> {{ article.date }}
+                    <div class="blog-intro">
+                        {{ article.introZh }}
+                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
-        {% endfor %}
-    {% endif %} 
+            {% endfor %}
+        {% endif %} 
+    </div>
+
     
 {% endblock %}

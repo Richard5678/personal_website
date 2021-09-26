@@ -7,6 +7,7 @@
         <link href="{% static 'home/style.css' %}" rel="stylesheet">
         <link href="{% static 'home/blog.css' %}" rel="stylesheet">
         <script src="{% static 'home/home.js' %}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -38,7 +39,7 @@
                 <ul style="float: right">
                         <li><a href="{% url 'index' lang %}" id="about">About</a></li>
                         <li><a href="{% url 'blog' lang %}" id="blog">Blog</a></li>
-                 
+                        <li><a href="{% url 'project' lang %}" id="project">Project</a></li>
                 </ul>
                 
             </div>
@@ -46,7 +47,7 @@
         </nav>
         <hr style="width:90%; margin-left:5% !important; margin-right:5% !important;" />
 
-        <div class="body">
+        <div>
             {% block body %}
             {% endblock %}
         </div>

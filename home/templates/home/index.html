@@ -7,7 +7,7 @@
             changeLangHome("{{ lang }}");
         });
     </script>
-    <div>
+    <div class="body">
         <div class="profile">
             <img src="{% static 'home/profile.jpeg' %}", alt="pic">
             <div id="name">Rongqi (Richard) Fan</div>
@@ -17,19 +17,26 @@
             <div class="intro" id="intro2"> I've been a huge sports my entire life. Soccer, Football, Basketball, Hockey, swimming, tennis, pingpong are some of my favorites.</div>
             <div class="intro" id="intro3"> In my free time, I enjoy playing go (a kind of chess) mostly online. I also use AI to help me improve my game and it has led to me interest in AI.</div>
         </div>
-        <div class="connect">
-            <h3 id="contact">Contact</h3>
-            <br>
-            <a href="https://www.linkedin.com/in/richard-fan-8a4b71171/">
-                <img src="https://www.kindpng.com/picc/m/363-3632986_logo-linkedin-png-rond-transparent-png.png", alt="LinkedIn">
-            </a>
-            <a href="https://www.youtube.com/channel/UCr6nNPOYu1opU6fSBLyI-dg/videos">
-                <img src="https://brandlogos.net/wp-content/uploads/2020/03/YouTube-icon-SVG-512x512.png", alt="YouTube">
-            </a>
-            <a href="{% url 'wechat' lang %}">
-                <img src="{% static 'home/wechat-logo.png' %}">
-            </a>
-        </div>
     </div>
+        <div class="connect">
+            <h2 id="contact">Contact</h2>
+            <br>
+
+            <div class="icon-bar">
+                <a href="https://github.com/Richard5678">
+                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/richard-fan-8a4b71171/">
+                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCr6nNPOYu1opU6fSBLyI-dg/videos">
+                    <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+                </a>
+                <a href="{% url 'wechat' lang %}">
+                    <i class="fa fa-wechat fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    
 
 {% endblock %}

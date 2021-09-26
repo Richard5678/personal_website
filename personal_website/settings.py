@@ -29,13 +29,13 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'k!d$66q9lc&c@yub)ihvbmlc7tx+nd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-EBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
+DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
 
 ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-#STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 INSTALLED_APPS = [
     'home',
@@ -80,12 +80,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'personal_website.wsgi.application'
 
 # added
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+#SECURE_HSTS_SECONDS = 31536000
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
+
+HOST_SCHEME = "http://"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -140,6 +142,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #this is not used
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type

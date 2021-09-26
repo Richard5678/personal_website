@@ -1,0 +1,19 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="body">
+        <div style="border:2px solid white; display: inline-block;">
+            <img class="img__img" src="{% static 'home/ctor.jpeg' %}"/>
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            This is a final project for CS246 at the University of Waterloo. 
+            <br>
+            <span class="paragraph"></span>
+            Due to university policies, 
+            this project cannot be made public. However, if you are an employer who wants to see the actual implementation,
+            please contact me for a deploy key to github.
+        </div>
+    </div>
+{% endblock %}

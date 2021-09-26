@@ -1,0 +1,16 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="body">
+        <div style="border:2px solid white; display: inline-block;">
+            <img class="img__img" src="{% static 'home/website.png' %}"/>
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            Personal Website built using HTML, CSS, Javascript, python, and Django. If you are reading this now, 
+             you have probably already navigated through many of the sections of my personal website.
+            See <a href="https://github.com/Richard5678/personal_website">github</a> for details.
+        </div>
+    </div>
+{% endblock %}

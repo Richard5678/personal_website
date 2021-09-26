@@ -54,3 +54,23 @@ def test(request, lang):
     return render(request, "home/test.html", {
         "lang": lang
     })
+
+def project(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang
+    })
+
+def website(request, lang):
+    return render(request, "home/website.html", {
+        "lang": lang
+    })
+
+def constructor(request, lang):
+    return render(request, "home/constructor.html", {
+        "lang": lang
+    })
+
+def algorithm(request, lang):
+    return render(request, "home/algorithm.html", {
+        "lang": lang
+    })

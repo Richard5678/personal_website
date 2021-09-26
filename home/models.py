@@ -8,3 +8,4 @@ class Article(models.Model):
     date = models.TextField()
     introEn = models.TextField()
     introZh = models.TextField()
+

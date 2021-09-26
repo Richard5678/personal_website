@@ -1,0 +1,41 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="body">
+        <ul class="SG">
+            <li> 
+                <li class="sgLi">
+                    <div class="box">
+                        <a href="{% url 'website' lang %}">
+                            <div class="img__wrap">
+                                <img class="img__img" src="{% static 'home/website.png' %}" />
+                                <div class="img__description"><h3 id="m">Personal Website</h3></div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </li> 
+            <li class="sgLi">
+                <div class="box">
+                    <a href="{% url 'ctor' lang %}">
+                        <div class="img__wrap">
+                            <img class="img__img" src="{% static 'home/ctor.jpeg' %}" />
+                            <div class="img__description"><h3 id="m">Constructor</h3></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="sgLi">
+                <div class="box">
+                    <a href="{% url 'algorithm' lang %}">
+                        <div class="img__wrap">
+                            <img class="img__img" src="{% static 'home/algo.jpeg' %}" />
+                            <div class="img__description"><h3 id="m">Algorithm (Leetcode)</h3></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

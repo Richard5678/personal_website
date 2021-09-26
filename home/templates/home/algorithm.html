@@ -1,0 +1,17 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="body">
+        <div style="border:2px solid white; display: inline-block;">
+            <img class="img__img" src="{% static 'home/algo.jpeg' %}"/>
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            This is not technically a project like the onces before. I just want to share some of the algorithm problems I did on leetcode and my thinking process.
+            <br>
+            <span class="paragraph"></span>
+            See <a href="https://github.com/Richard5678/leetcode">github</a> for details.
+        </div>
+    </div>
+{% endblock %}
