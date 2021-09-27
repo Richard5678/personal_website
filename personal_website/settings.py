@@ -23,19 +23,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-rnv!o)nq=javh@fr_!obe_f&cvn)0m@2l29brap7$**v0836#!'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'k!d$66q9lc&c@yub)ihvbmlc7tx+ndn8bi(vh%%3i9*=7$8mc(')
+from decouple import config
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
+DEBUG = True
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
+
+#db_from_env = dj_database_url.config(conn_max_age=600)
+#DATABASES['default'].update(db_from_env)
+
+STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+
+
+
 
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-
-STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 INSTALLED_APPS = [
     'home',
@@ -142,7 +152,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') #this is not used
  #   os.path.join(BASE_DIR, 'static'),
 #]
 
-#STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -187,5 +197,3 @@ LOGGING = {
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
