@@ -29,16 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 from decouple import config
 #SECRET_KEY = config("SECRET_KEY")
-SECRET_KEY = 'k!d$66q9lc&c@yub)ihvbmlc7tx+ndn8bi(vh%%3i9*=7$8mc('
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'k!d$66q9lc&c@yub)ihvbmlc7tx+ndn8bi(vh%%3i9*=7$8mc(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
 
-#db_from_env = dj_database_url.config(conn_max_age=600)
-#DATABASES['default'].update(db_from_env)
-
-STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 
@@ -198,3 +195,5 @@ LOGGING = {
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
