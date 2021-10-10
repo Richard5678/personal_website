@@ -150,7 +150,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') #this is not used
  #   os.path.join(BASE_DIR, 'static'),
 #]
 
-STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoice.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
