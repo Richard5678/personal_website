@@ -2,16 +2,30 @@
 {% load static %}
 
 {% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangProj("Algo", "{{ lang }}");
+        });
+    </script>
     <div class="body">
-        <div style="border:2px solid white; display: inline-block;">
+        <div style="border:2px solid white; width: 50%; margin-right: auto; margin-left: auto;">
             <img class="img__img" src="{% static 'home/algo.jpeg' %}"/>
         </div>
         <br>
         <div style="padding: 5% 5%; line-height: 50px;">
-            This is not technically a project like the onces before. I just want to share some of the algorithm problems I did on leetcode and my thinking process.
+            <h1 class="proj_titles">Outline</h1>
+            <hr>
+            <div class="project_content">
+                This is not technically a project like the onces before. I just want to share some of the algorithm problems I did on leetcode and my thinking process.
+            </div>
             <br>
-            <span class="paragraph"></span>
-            See <a href="https://github.com/Richard5678/leetcode">github</a> for details.
+            <h1 class="proj_titles">Demo</h1>
+            <hr>
+            <h1 class="proj_titles" style="margin-top: 100px;">Implementaion</h1>
+            <hr>
+            <div id="project_impl">
+                See <a href="https://github.com/Richard5678/leetcode">github</a> for details.
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -17,7 +17,7 @@ def index(request, lang):
     })
 
 def blog(request, lang):
-    return render(request, "home/blog.html", {
+    return render(request, "home/blogHome.html", {
         "articles": Article.objects.all(),
         "lang": lang,
         "en": lang=='en',
@@ -44,9 +44,10 @@ def first(request, lang):
 
 def article(request, article_id, lang):
     article = Article.objects.get(pk=article_id)
-    return render(request, f"home/{ article.idName }.html", {
+    return render(request, f"home/blog.html", {
         "lang": lang,
-        "section": "false"
+        "section": article.idName,
+        "blog": article
     })
 
 
@@ -56,21 +57,60 @@ def test(request, lang):
     })
 
 def project(request, lang):
-    return render(request, "home/project.html", {
+    return render(request, "home/projectHome.html", {
         "lang": lang
     })
 
 def website(request, lang):
-    return render(request, "home/website.html", {
-        "lang": lang
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "website",
+        "proj_img": "website.png"
     })
 
 def constructor(request, lang):
-    return render(request, "home/constructor.html", {
-        "lang": lang
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "ctor",
+        "proj_img": "ctor.jpeg"
     })
 
 def algorithm(request, lang):
-    return render(request, "home/algorithm.html", {
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "algo",
+        "proj_img": "algo.jpeg"
+    })
+
+def gameOfLife(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "gameOfLife",
+        "proj_img": "gameOfLife.jpeg"
+    })
+
+def testing(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "testing",
+        "proj_img": "testing.jpeg"
+    })
+
+def classifier(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "classifier",
+        "projImg": "classifier.png"
+    })
+
+def fitness(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "fitness",
+        "proj_img": "fitness.png"
+    })
+
+def projectTest(request, lang):
+    return render(request, "home/constructor.html", {
         "lang": lang
     })

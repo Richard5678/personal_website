@@ -1,0 +1,35 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangProj("Testing", "{{ lang }}");
+        });
+    </script>
+    <div class="body">
+        <div style="border:2px solid white; width: 50%; margin-right: auto; margin-left: auto;">
+            <img class="img__img" src="{% static 'home/testing.jpeg' %}"/>
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            <h1 class="proj_titles">Outline</h1>
+            <hr>
+            <div class="project_content">
+                
+            </div>
+            
+            <br>
+            <h1 class="proj_titles">Demo</h1>
+            <hr>
+            <div style="padding-top: 100px;"></div>
+            <h1 class="proj_titles">Implementation</h1>
+            <hr>
+            <div id="project_impl">
+                Due to university policies, 
+                this project cannot be made public. However, if you are an employer who wants to see the actual implementation,
+                please contact me for a deploy key to github.
+            </div>
+        </div>
+    </div>
+{% endblock %}

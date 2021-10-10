@@ -1,5 +1,11 @@
 {% extends "home/layout.html" %}
 {% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangBlog("first", "{{ lang }}")
+            console.log("{{ section }}");
+        });
+    </script>
     <div class="container body">
         <h1>First Post</h1>
         <br>09/12/2021
@@ -14,7 +20,7 @@
                 <span class="paragraph">
                    
                 </span>
-                <h1>Article</h1>
+                <h1>Body</h1>
                 <hr>
                 While I was setting up my personal website this past week, I had the idea of having a
                 section that shares some of personal experiences and understandings on the many issues that we face today.
@@ -30,7 +36,14 @@
                 Another moviation for writing blogs is to help myself organize some of my thoughts.
                 Also, I plan to add support for both Chinese and English which means I get the chance to practice writing in Chinese which I haven't done so for a long time.
                 <span class="paragraph"></span>
-                Thanks for reading! Enjoy!
+                <h1>Special Thanks</h1>
+                <hr>
+                <p>I want to use this sectioin to thank everything that has helped me build this website.</p>
+                <p>Most importantly, I want to thank <a href="https://www.youtube.com/watch?v=Nn7EX3zkGUo&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu">CS50's Web Programming with Python and Javascript.</a>
+                Instructor Brian Yu is a truly amazing teacher and most of the techniques and concepts I used in developing this website come from this course.</p>
+                <p>I also want to thank those who try to answer questions to their best of abilities on stackoverflow. We don't truly appreciate you until we've faced problems that take days to fix.</p>
+                
+                <p style="padding-top: 30px; font-size: 25px;">Thanks for reading! Enjoy!</p>
                 
 
             </div>

@@ -6,10 +6,11 @@
         addEventListener("DOMContentLoaded", () => {
             changeLangHome("{{ lang }}");
         });
+
     </script>
     <div class="body">
         <div class="profile">
-            <img src="{% static 'home/profile.jpeg' %}", alt="pic">
+            <img style="width: 10%;" src="{% static 'home/profile.jpeg' %}", alt="pic">
             <div id="name">Rongqi (Richard) Fan</div>
         </div>
         <div id="intro">
@@ -17,26 +18,39 @@
             <div class="intro" id="intro2"> I've been a huge sports my entire life. Soccer, Football, Basketball, Hockey, swimming, tennis, pingpong are some of my favorites.</div>
             <div class="intro" id="intro3"> In my free time, I enjoy playing go (a kind of chess) mostly online. I also use AI to help me improve my game and it has led to me interest in AI.</div>
         </div>
+        <div id="resumes">
+            <a href="{% static 'home/resume-en.pdf' %}" id="resume-e">Resume</a>
+            <a href="{% static 'home/resume-zh.pdf' %}" id="resume-z">简历</a>
+        </div>
+        
     </div>
         <div class="connect">
             <h2 id="contact">Contact</h2>
-            <br>
-
-            <div class="icon-bar">
-                <a href="https://github.com/Richard5678">
-                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/richard-fan-8a4b71171/">
-                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/UCr6nNPOYu1opU6fSBLyI-dg/videos">
-                    <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
-                </a>
-                <a href="{% url 'wechat' lang %}">
-                    <i class="fa fa-wechat fa-2x" aria-hidden="true"></i>
-                </a>
-            </div>
+            <hr>
+            <div class="wrapper">
+                <div class="icon github">
+                  <div class="tooltip">Github</div>
+                  <span><a href="https://github.com/Richard5678"><i class="fab fa-github"></i></a></span>
+                </div>
+                <div class="icon linkedin">
+                  <div class="tooltip">Linkedin</div>
+                  <span><a href="https://www.linkedin.com/in/richard-fan-8a4b71171/"><i class="fab fa-linkedin"></i></a></span>
+                </div>
+                <div class="icon youtube">
+                  <div class="tooltip">Youtube</div>
+                  <span><a href="https://www.youtube.com/channel/UCr6nNPOYu1opU6fSBLyI-dg/videos"><i class="fab fa-youtube"></i></a></span>
+                </div>
+                <div class="icon wechat">
+                  <div class="tooltip">Wechat</div>
+                  <span><a href="{% url 'wechat' lang %}"><i class="fab fa-wechat"></i></a></span>
+                </div>
+                
+              </div>
+              
+            
         </div>
+
+        
     
 
 {% endblock %}

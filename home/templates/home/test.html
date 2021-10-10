@@ -1,36 +1,71 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Richard</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        
     </head>
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            var projects = document.getElementsByTagName('img');
+            console.log(projects.length);
+            for (i = 0; i < projects.length; i++) {
+                var width = projects[i].clientWidth * 0.80;
+                console.log("width", width);
+                projects[i].style.height = width + "px";
+                console.log("height", projects[i].clientHeight);
+            }
+        })
+    </script>
     <style>
 
-        nav {
-            width: 110%;
-            height: 100px;
-            background-color: white;
-            float: left;
-            clear: both;
-            margin: 0px;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding:0;
-        }
 
-        body {
-            background-color: rgb(3, 100, 245);
-            
-            clear: both;
+
+
+    
+li {
+        width: 24%;
+        display: inline-block;
+        padding: 10px;
+    }
+
+    
+        .wrap {
+        position: relative;
+        width:100%;
+        border: 2px solid blue;
+        background-color: yellow;
         }
+    
+        
+    
+    
+
+
     </style>
     <body>
-        <nav id="block1">
+        
 
-        </nav>
-        <div id="block2">
+          
 
-        </div>
+
+        <ul>
+            <li>
+                <div class="wrap">
+                    <img src="{% static 'home/website.png' %}" style="width:100%;  display: block;">
+                </div>
+            </li>
+            <li>
+                <div class="wrap">
+                    <img src="{% static 'home/algo.jpeg' %}" style="width:100%;  display: block;"/>
+                </div>
+            </li>
+            <li>
+                <div class="wrap">
+                    <img src="{% static 'home/ctor.jpeg' %}" style="width:100%; display: block;"/>
+                </div>
+            </li>
+        </ul>
     </body>
 </html>

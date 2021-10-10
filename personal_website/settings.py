@@ -31,13 +31,13 @@ from decouple import config
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
+#DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
 
 #db_from_env = dj_database_url.config(conn_max_age=600)
 #DATABASES['default'].update(db_from_env)
 
-STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+#STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 

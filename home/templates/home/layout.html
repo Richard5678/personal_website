@@ -6,8 +6,112 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <link href="{% static 'home/style.css' %}" rel="stylesheet">
         <link href="{% static 'home/blog.css' %}" rel="stylesheet">
+        <script src="{% static 'home/project.js' %}"></script>
+        <script src="{% static 'home/blog.js' %}"></script>
         <script src="{% static 'home/home.js' %}"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script>
+            function resize() {
+                var navs = document.getElementsByClassName('nav-content');
+                var intros = document.getElementsByClassName('intro');
+                var projects = document.getElementsByClassName('proj_li');
+                var projects_names = document.getElementsByClassName('projectNames');
+                var name = document.getElementById('name');
+                console.log(projects.length);
+                if (window.innerWidth <= 600) {
+                    for (i = 0; i < navs.length; i++) {
+                        navs[i].style.padding = '2px 5px';
+                        navs[i].style["font-size"] = '20px';
+                    }
+                    for (i = 0; i < intros.length; i++) {
+                        intros[i].style["font-size"] = '20px';
+                    }
+                    
+                    if (name != null) {
+                        name.style["font-size"] = '35px';
+                    }   
+
+                    
+                } else {
+                    for (i = 0; i < navs.length; i++) {
+                        navs[i].style.padding = '8px 15px';
+                        navs[i].style["font-size"] = '25px';
+                    }
+                    for (i = 0; i < intros.length; i++) {
+                        intros[i].style["font-size"] = '25px';
+                    }
+
+                    if (name != null) {
+                        name.style["font-size"] = '50px';
+                    }   
+
+                    
+                }
+                // adjust projects window 
+                if (window.innerWidth <= 700) {
+                    for (j = 0; j < projects.length; j++) {
+                        console.log(24);
+                        console.log(j);
+                        projects[j].style.width = '48%';
+                    }
+
+                    for (i = 0; i < projects_names.length; i++) {
+                        projects_names[i].style["font-size"] = '4vw';
+                    }
+                } else {
+                    for (j = 0; j < projects.length; j++) {
+                        console.log(24);
+                        console.log(j);
+                        projects[j].style.width = '24%';
+                    }
+                    for (i = 0; i < projects_names.length; i++) {
+                        projects_names[i].style["font-size"] = '2vw';
+                    }
+                }
+
+                var ctor_hor = document.getElementById('ctor_hor');
+                if (ctor_hor != null) {
+                    if (window.innerWidth <= 900) {
+                    ctor_hor.style.display = 'inline-block';
+                    ctor_hor.style.textAlign = "center";
+                    } else {
+                        ctor_hor.style.display = 'flex';
+                        ctor_hor.style.textAlign = "left";
+                    }
+                }
+            }
+
+            function resizeProj() {
+                var proj_wrap = document.getElementsByClassName('wrap_img');
+                console.log(proj_wrap.length);
+                var width = 0;
+                for (i = 0; i < proj_wrap.length; i++) {
+                    width = proj_wrap[i].clientWidth;
+                    console.log("width", width);
+                    proj_wrap[i].style.height = width * 0.80 + "px";
+                    console.log("height", proj_wrap[i].clientHeight);
+                }
+
+                var proj_fit = document.getElementsByClassName('fit_img');
+                console.log(proj_fit.length);
+                for (i = 0; i < proj_fit.length; i++) {
+                    proj_fit[i].style.width = width + "px";
+                    console.log("width", proj_fit[i].clientWidth);
+                    proj_fit[i].style.height = width * 0.80 + "px";
+                    console.log("width", proj_fit[i].clientHeight);
+                }
+            }
+            window.onresize = () => {
+                resize();
+                resizeProj();
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                resize();
+            })
+        </script>
     </head>
 
     <body>
@@ -32,24 +136,27 @@
                             
                         </script>
                         
-                        <li><a href="zh" >中文</a></li>
-                        <li><a href="en">English</a></li>
+                        <li><a class="nav-content" href="zh" >中文</a></li>
+                        <li><a class="nav-content" href="en">English</a></li>
 
                 </ul>
                 <ul style="float: right">
-                        <li><a href="{% url 'index' lang %}" id="about">About</a></li>
-                        <li><a href="{% url 'blog' lang %}" id="blog">Blog</a></li>
-                        <li><a href="{% url 'project' lang %}" id="project">Project</a></li>
+                        <li><a class="nav-content" href="{% url 'index' lang %}" id="about">About</a></li>
+                        <li><a class="nav-content" href="{% url 'blog' lang %}" id="blog">Blog</a></li>
+                        <li><a class="nav-content" href="{% url 'project' lang %}" id="project">Project</a></li>
                 </ul>
                 
             </div>
            
         </nav>
         <hr style="width:90%; margin-left:5% !important; margin-right:5% !important;" />
+        
 
         <div>
             {% block body %}
             {% endblock %}
         </div>
+
+        
     </body>
 </html>

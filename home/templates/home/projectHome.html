@@ -1,0 +1,103 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            changeLangProject("{{ lang }}");
+            var proj_wrap = document.getElementsByClassName('wrap_img');
+            console.log(proj_wrap.length);
+            var width = 0;
+            for (i = 0; i < proj_wrap.length; i++) {
+                width = proj_wrap[i].clientWidth;
+                console.log("width", width);
+                proj_wrap[i].style.height = width * 0.80 + "px";
+                console.log("height", proj_wrap[i].clientHeight);
+            }
+
+            var proj_fit = document.getElementsByClassName('fit_img');
+            console.log(proj_fit.length);
+            for (i = 0; i < proj_fit.length; i++) {
+                proj_fit[i].style.width = width + "px";
+                console.log("width", proj_fit[i].clientWidth);
+                proj_fit[i].style.height = width * 0.80 + "px";
+                console.log("width", proj_fit[i].clientHeight);
+            }
+        });
+    </script>
+    <div class="body">
+        <ul id="projects">
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'website' lang %}">
+                        
+                            <img class="wrap_img" src="{% static 'home/website.png' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Personal Website</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'ctor' lang %}">
+                        
+                            <img class="wrap_img" src="{% static 'home/ctor.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Constructor</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'fitness' lang %}">
+                        
+                            <img class="wrap_img" src="{% static 'home/fitness.png' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Fitness App</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'gameOfLife' lang %}">
+                        
+                            <img class="fit_img" src="{% static 'home/gameOfLife.png' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Conway's Game of Life</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'testing' lang %}">
+                        
+                            <img class="wrap_img" src="{% static 'home/testing.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Testing Tools</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'classifier' lang %}">
+                        
+                            <img class="fit_img" src="{% static 'home/classifier.png' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Creature Classifier</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li"> 
+                <div class="wrap">
+                    <a href="{% url 'algorithm' lang %}">
+                        <div >
+                            <img class="wrap_img" src="{% static 'home/algo.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Algorithm (Leetcode)</h3></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

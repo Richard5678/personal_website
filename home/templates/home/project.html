@@ -2,50 +2,35 @@
 {% load static %}
 
 {% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangProj("{{ proj }}", "{{ lang }}");
+        });
+    </script>
     <div class="body">
-        <ul class="SG">
-            <li> 
-                <li class="sgLi">
-                    <div class="box">
-                        <a href="{% url 'website' lang %}">
-                            <div class="img__wrap">
-                                <img class="img__img" src="{% static 'home/website.png' %}" />
-                                <div class="img__description"><h3 id="m">Personal Website</h3></div>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </li> 
-            <li class="sgLi">
-                <div class="box">
-                    <a href="{% url 'ctor' lang %}">
-                        <div class="img__wrap">
-                            <img class="img__img" src="{% static 'home/ctor.jpeg' %}" />
-                            <div class="img__description"><h3 id="m">Constructor</h3></div>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="sgLi">
-                <div class="box">
-                    <a href="{% url 'ctor' lang %}">
-                        <div class="img__wrap">
-                            <img class="img__img" src="https://play-lh.googleusercontent.com/4xtboOCl4G36He2_RUaYhI9v_eDIoXara2hAxDi99f1R5MwLjSI1QZ_CT6wLdjCTV3E" />
-                            <div class="img__description"><h3 id="m">Conway's Game of Life</h3></div>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="sgLi">
-                <div class="box">
-                    <a href="{% url 'algorithm' lang %}">
-                        <div class="img__wrap">
-                            <img class="img__img" src="{% static 'home/algo.jpeg' %}" />
-                            <div class="img__description"><h3 id="m">Algorithm (Leetcode)</h3></div>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        </ul>
+        <div style="border:2px solid white; width: 30%; margin-right: auto; margin-left: auto;">
+            <img class="img__img" id="img" style="background-color: white;">
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+
+            <h1 class="proj_titles">Outline</h1>
+            <hr>
+            <div class="project_content">
+
+            </div>
+            <br>
+            
+            <h1 class="proj_titles">Demo</h1>
+            <hr>
+            <div class="project_content">
+
+            </div>
+
+            <h1 style="margin-top: 100px;" class="proj_titles">Implementation</h1>
+            <hr>
+            <div id="project_impl">
+            </div>
+        </div>
     </div>
 {% endblock %}

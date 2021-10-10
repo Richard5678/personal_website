@@ -1,0 +1,42 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLang("Classifier", "{{ lang }}");
+        });
+    </script>
+    <div class="body">
+        <div style="border:2px solid white; width: 50%; margin-right: auto; margin-left: auto; background-color: white;">
+            <img class="img__img" src="{% static 'home/classifier.png' %}"/>
+        </div>
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            <h1>Outline</h1>
+            <hr>
+            <p>This project classifies creatures based on their structure which is given in a form of undirected
+                and unweighted graph.</p>
+
+            <p>Essentially, there are a set of commands that lets the user creates a node or connect, disconnect 
+                a node from another node. In addition, there are also commands that ask the program to classify the current structure or delete the whole structure.
+            </p>
+            
+            <h1 style="margin-top: 100px;">Demo</h1>
+            <hr>
+
+
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+
+            <h1 style="margin-top: 100px;">Implementation</h1>
+            <hr>
+            Due to university policies, 
+            this project cannot be made public. However, if you are an employer who wants to see the actual implementation,
+            please contact me for a deploy key to github.
+        </div>
+    </div>
+{% endblock %}

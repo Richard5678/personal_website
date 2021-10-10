@@ -1,0 +1,35 @@
+{% extends "home/layout.html" %}
+{% block body %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLangNav("{{ lang }}");
+        });
+    </script>
+    <div class="body">
+        {% if en %}
+            {% for article in articles reversed %} 
+                <div class="blog-section">
+                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleEn }}</a></h1>
+                    <br> {{ article.date }}
+                    <div class="blog-intro">
+                        {{ article.introEn }}
+                    </div>
+                    <hr style="height: 3px;">
+                </div>
+            {% endfor %}
+        {% else %}
+            {% for article in articles reversed %}
+                <div class="blog-section">
+                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleZh }}</a></h1>
+                    <br> {{ article.date }}
+                    <div class="blog-intro">
+                        {{ article.introZh }}
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+        {% endif %} 
+    </div>
+
+    
+{% endblock %}

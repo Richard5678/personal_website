@@ -15,5 +15,10 @@ urlpatterns = [
     path("project/<str:lang>", views.project, name="project"),
     path("project/website/<str:lang>", views.website, name="website"),
     path("project/constructor/<str:lang>", views.constructor, name="ctor"),
-    path("project/algorithm/<str:lang>", views.algorithm, name="algorithm")
+    path("project/algorithm/<str:lang>", views.algorithm, name="algorithm"),
+    path("project/gameoflife/<str:lang>", views.gameOfLife, name="gameOfLife"),
+    path("project/testing/<str:lang>", views.testing, name="testing"),
+    path("project/classifier/<str:lang>", views.classifier, name="classifier"),
+    path("project/fitness/<str:lang>", views.fitness, name="fitness"),
+    path("proj/test/<str:lang>", views.projectTest, name="projectTest")
 ]

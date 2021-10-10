@@ -2,33 +2,37 @@
 {% block body %}
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            changeLangNav("{{ lang }}");
+            changeLangBlog("{{ blog.idName }}", "{{ lang }}");
         });
     </script>
     <div class="body">
-        {% if en %}
-            {% for article in articles reversed %} 
-                <div class="blog-section">
-                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleEn }}</a></h1>
-                    <br> {{ article.date }}
-                    <div class="blog-intro">
-                        {{ article.introEn }}
-                    </div>
+        <div class="container body">
+            <h1 id="blog_title"></h1>
+            <br>{{ blog.date }}
+            <hr>
+    
+            <div class="blog-text"> 
+                <div style="line-height: 200%;">
+                    <h1 class="blog_titles margin_top">Introduction</h1> 
                     <hr>
-                </div>
-            {% endfor %}
-        {% else %}
-            {% for article in articles reversed %}
-                <div class="blog-section">
-                    <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleZh }}</a></h1>
-                    <br> {{ article.date }}
-                    <div class="blog-intro">
-                        {{ article.introZh }}
+                    <div class="blog_intro">
+
                     </div>
+                    <h1 class="blog_titles margin_top">Motivation</h1>
                     <hr>
+                    <div class="blog_motivation">
+
+                    </div>
+                    </span>
+                    <h1 class="blog_titles margin_top">Body</h1>
+                    <hr>
+                    <div class="blog_body">
+
+                    </div>
+    
                 </div>
-            {% endfor %}
-        {% endif %} 
+            </div>
+        </div>
     </div>
 
     

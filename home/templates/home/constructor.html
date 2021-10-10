@@ -2,18 +2,204 @@
 {% load static %}
 
 {% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangProj("Ctor", "{{ lang }}");
+        });
+    </script>
     <div class="body">
-        <div style="border:2px solid white; display: inline-block;">
+        <div style="border:2px solid white; width: 50%; margin-right: auto; margin-left: auto;">
             <img class="img__img" src="{% static 'home/ctor.jpeg' %}"/>
         </div>
         <br>
         <div style="padding: 5% 5%; line-height: 50px;">
-            This is a final project for CS246 at the University of Waterloo. 
+            <h1 class="proj_titles">Outline</h1>
+            <hr>
+            <div class="project_content">
+                This is a final project for CS246 at the University of Waterloo. 
+                <br>
+                <h3 style="margin-top: 20px;">Setup</h3>
+                <hr>
+                This game is played on a board displayed below:
+                <br>
+                <div id="ctor_hor" style="display: flex">
+                    <img style="position: relative; width:400px;  height: 30%; " src="{% static 'home/ctorBoard.png' %}">
+                    <p style="padding: 3%;">Each small recentagle on the board is called a tile and a board is consists of 19 such tiles.
+                    Inside each tile, there are three values: the index of the tile, the resource of that tile, and the tile values 
+                    which is used to determine if the resource on the tile is awarded when the dices are rolled. (From up to bottom).
+                    <br style="margin-top: 10px;"></br>
+                    On the edges and vertices of each tile are houses and roads which players can build on. 
+                        To be specific, each tile has 6 vertices, represented with number surrounded by a bracket. 
+                        Each tile has 6 edges, represented with just number. 
+                    </p>
+                </div>
+                <p>
+                    Players can build residence on vertices or build roads on edges during their turns.
+                    Each residence is built in this order: basement, house, tower. Each player must start by building
+                    a basement and then upgrade in that order if that player has enough resources.
+
+                </p>
+                <p>
+                    This game is played with 4 players who switch turns. At the start of each turn, two dice are throwed and 
+                    their sum will be in the range of 2 - 12. If there are tiles with that tile value (at the bottom of each tile), 
+                    then resources of those tiles are awarded to players who own a residence on the vertices of those tiles.
+                </p>
+
+                <h3 style="margin-top: 20px;">Geese</h3>
+                <hr>
+                The Geese will start the gaming resting in the Park. When 7 is rolled, the current player can move the geese to anywhere on the board.
+                Also note that any player with more than 10 resources will automatically lose half of them (rounded down) at random.
+                In addition, the current player can steal a resource from a player who owns a residence on the tile that the geese has been moved to.
+
+
+                <h3 style="margin-top: 20px;">Building Residences / Roads</h3>
+                <hr>
+                <p>
+                    There are five types of resources: Brick, Energy, Glass, Heat, Wifi, and Park. 
+                    Here is a list of resources needed to build the following items:
+                </p>
+                <ol class="ul-style indent_list">
+                    <li>Basement: 1 Brick, 1 Energy, 1 Glass, 1 Wifi</li>
+                    <li>House: 2 Glass, 3 Heat</li>
+                    <li>Tower: 3 Brick, 2 Energy, 2 Glass, 1 Wifi, 2 Heat</li>
+                    <li>Road: 1 Heat, 1 Wifi</li>
+                </ol>
+                There are also some rules regarding where a player can build residences and roads:
+                <ol class="indent_list">
+                    <li>A residence cannot be built on a vertex adjacent to a residence.</li>
+                    <li>Beside the beginning of the game, a residence have to be built on a vertex that has an adjacent road owned by that player.</li>
+                    <li>A road can be built on any edges that has an adjacent road or residence owned by that player.</li>
+                    <li>At the start of the game, each player can choose to build two basements anywhere on the board.</li>
+                </ol>
+                <h3 style="margin-top: 20px;">How to Win?</h3>
+                <hr>
+                The player who first get 10 building points win. Building a basement gets 1 building point and each upgrade get 1 additional point.
+                So to win the game, a player have to build more residences since they not only gives building points but they also allow them to get more resources when dices are rolled each turn.
+
+            </div>
             <br>
-            <span class="paragraph"></span>
-            Due to university policies, 
-            this project cannot be made public. However, if you are an employer who wants to see the actual implementation,
-            please contact me for a deploy key to github.
+            <h1 class="proj_titles">Demo</h1>
+            <hr>
+
+            <ol>
+                <li>	Setup:
+                    When the program is run without any command line argument, it initialize the board according to layout.txt in the current directory: 
+                    <br>
+                    You can use the command line argument "-board file" to inialize the board. ("file" should have the same format as layout.txt)
+                </li>
+                    <img src="{% static 'home/ctor1.png' %}">
+                <p>As you can see layout.txt contains 38 numbers and each pair of number represents the state of a tile in the order of tiles on the board. (First number represents resource and second is the value) </p>
+                <p>Note that we have the following correspondence bewteen resources and number: 0:Brick, 1:Energy, 2:Glass, 3:Heat, 4:Wifi, 5: Park </p>
+                <p>The layout.txt initializes board below:</p>
+                <div style="text-align: center;">
+                    <img style="align-items: center; width:50%;  height: 30%;" src="{% static 'home/ctorBoard.png' %}">
+                </div>
+
+                <li> At the beginning of the game, each player is prompted to build 2 residences anywhere on the board. You can also see that if a residence has already been built on a vertex by another user, then other users cannot build on it.</li>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor2.png' %}">
+                </div>
+
+                <li> At the start of each player's turn, the player is prompted to enter which dice to use.
+                    There are two options: load dice or fair dice. Fair dice returns a number randomly bewteen 2-12 while load dice asks you to enter a number in that range:
+                </li>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor3.png' %}">
+                </div>
+                The status command shows the points and resources each player have. When you enter the dice you want to roll, the program will take the last kind of dice you entered.
+                Here is a desmontration:
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor4.png' %}">
+                </div>
+
+                <li>Demonstration of command “help”, “residences”, “improve” and rolling a fair dice:</li>
+                Command "help" prints all the commands accepted by the program, “residences” prints all the residences built by the current player.
+                "improve" upgrades the residence.
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor5.png' %}">
+                </div>
+
+                <li>	Using the command line argument of “-random-board”. The board is randomly initialized to have 3 WIFI, 3 HEAT, 4 BRICK, 4 ENERGY, 4 GLASS, and 1 PARK</li>
+                Command:
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor6.png' %}">
+                </div>
+                Board:
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor7.png' %}">
+                </div>
+                <li>When the dice rolls 3, observe that Tile 0 is the only tile with a tile value of 3. So all the builders who own vertices on tile 0 will be given one unit of BRICK as 
+                    it is the resource of Tile 0. The “status” command shows all the resources and builder-points owned by each player and you can see that Blue gained 2 bricks and Orange and Yellow both gained 1 brick. 
+                    From the board above we see that Blue owns two vertices in Tile 0 and Yellow, Orange each owns one vertices in Tile 0.</li>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor8.png' %}">
+                </div>   
+
+                <li>The effect of geese: </li>
+                The status of each builder before 7 is rolled:
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor9.png' %}">
+                </div>   
+                In the next turn when 7 is rolled, Blue loses 6 of its 13 total resources 
+                and Red loses 6 of its 12 total resources. Then geese is moved to Tile 0 for which Blue, Orange, Yellow owns vertices. 
+                So Red can choose to steal a resource from one of them as all three has at least one resource. As you can see, Red steals a Brick from Blue. 
+                Comparing to the first pic, Blue had 5 bricks before the turn and lost one due to geese and lost another one to Red. 
+                On the other hand, Red gained a brick compared to before the turn.
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor10.png' %}">
+                </div>  
+
+
+                <li>Command "build-road" and "build-res": When we build the road at 14, it is successful because Blue already owns a residence that is adjacent to edge 14. 
+                    After that when we try to build a basement on vertex 14, although Blue owns a road adjacent to vertex 14, 
+                    it fails because we cannot build residences on adjacent vertices. We then try to build a residence on vertex 20, 
+                    it fails because Blue does not own an edge adjacent to 20. After building a road on edge 22, building a residence on vertex 20 is successful.</li>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor11.png' %}">
+                </div> 
+                <p>As you can see from the new board that roads and houses are built by Blue has already been updated. 
+                    Since building a basement costs one brick, one glass, one wifi, one energy, and building a road costs one heat and one wifi, 
+                    Blue has used a total of one brick, one glass, three wifi, one energy and two heats (one basement, two roads built). 
+                    Observe that it is exactly what Blue lost has shown by the status command:</p>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor12.png' %}">
+                </div> 
+
+                <li>Command "trade player loss gain" where loss is the resource you are offering and gain is the resource you will obtain:</li>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor13.png' %}">
+                </div> 
+
+                <li>Command "save file" and commland line argument "-load file":</li>
+                In the example below we can see that it's currently player Orange's turn and status of all players are also displayed.
+                The game is saved in the file game1.txt:
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor14.png' %}">
+                </div> 
+                Then we can resume the game using the command line argument "-load saved-file":
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor15.png' %}">
+                </div> 
+                
+                <li>Check winners:</li>
+                <p>Blue has 9 builder points at the start of the turn. Then Blue builds roads on edge 14 and 22 which allowed Blue to build a basement on vertex. 
+                    Since the builder gains 1 point for building a basement, Blue has 10 builder points now which mean Blue has won. Then the program asks the user if they want to play again. 
+                    The first picture below shows the situation when the user responds yes in which case the game restarts. The second pictures shows when the response is no so the program ends.
+                </p>
+                <div style="text-align: center;">
+                    <img style="width: 50%;" src="{% static 'home/ctor16.png' %}">
+                </div> 
+            </ol>
+
+
+
+            <h1 style="margin-top: 100px;" class="proj_titles">Implementation</h1>
+            <hr>
+            <div id="project_impl">
+                Due to university policies, 
+                this project cannot be made public. However, if you are an employer who wants to see the actual implementation,
+                please contact me for a deploy key to github.
+            </div>
         </div>
     </div>
 {% endblock %}

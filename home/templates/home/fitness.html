@@ -1,0 +1,31 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <script>
+        addEventListener("DOMContentLoaded", () => {
+            changeLangProj("Fitness", "{{ lang }}");
+        });
+    </script>
+    <div class="body">
+        <div style="border:2px solid white; width: 20%; margin-right: auto; margin-left: auto; background-color: white;">
+            <img style="width: 100%;" src="{% static 'home/fitness.png' %}"/>
+        </div> 
+        <br>
+        <div style="padding: 5% 5%; line-height: 50px;">
+            <h1 class="proj_titles">Outline</h1>
+            <hr>
+            <div class="project_content">
+
+            </div>
+            <br>
+            <h1 class="proj_titles">Demo</h1>
+            <hr>
+            <h1 style="margin-top: 100px;" class="proj_titles">Implementaion</h1>
+            <hr>
+            <div id="project_impl">
+                See <a href="https://github.com/Richard5678/Fitness-App">github</a> for details.
+            </div>
+        </div>
+    </div>
+{% endblock %}
