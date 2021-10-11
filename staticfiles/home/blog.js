@@ -27,9 +27,7 @@ var blog_content = {
         "en": {
             "title": "First Post",
             "intro": "Welcome to my first post! I just want to use the space below to talk about some of the motivations of writing blogs as well as some types of blogs I will be writing about.",
-            "motivation": [" Welcome to my first post! I just want to use the space below to "
-            + "talk about some of motivations of writing blogs as well as some types of blogs "
-            + "I will be writing about."],
+            "motivation": [""],
             "body": ["While I was setting up my personal website this past week, I had the idea of having a"
                 + "section that shares some of personal experiences and understandings on the many issues that we face today."
                 + "I think it is a great way to give people who are viewing this website an idea of what my interests are and more importantly where do I spend time on."
