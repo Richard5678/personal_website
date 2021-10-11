@@ -27,7 +27,7 @@ var blog_content = {
         "en": {
             "title": "First Post",
             "intro": "Welcome to my first post! I just want to use the space below to talk about some of the motivations of writing blogs as well as some types of blogs I will be writing about.",
-            "motivation": [""],
+            "motivation": ["See below:"],
             "body": ["While I was setting up my personal website this past week, I had the idea of having a"
                 + "section that shares some of personal experiences and understandings on the many issues that we face today."
                 + "I think it is a great way to give people who are viewing this website an idea of what my interests are and more importantly where do I spend time on."
@@ -42,7 +42,7 @@ var blog_content = {
                 + "Another moviation for writing blogs is to help myself organize some of my thoughts."
                 + "Also, I plan to add support for both Chinese and English which means I get the chance to practice writing in Chinese which I haven't done so for a long time."
                 + "<span class='paragraph'></span>"
-                + "<h1 class='margin_top'>Special Thanks</h1>"
+                + "<h3 class='margin_top'>Special Thanks</h3>"
                 + "<hr>"
                 + "<p>I want to use this sectioin to thank everything that has helped me build this website.</p>"
                 + "<p>Most importantly, I want to thank <a href='https://www.youtube.com/watch?v=Nn7EX3zkGUo&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu'>CS50's Web Programming with Python and Javascript.</a>"
@@ -54,7 +54,7 @@ var blog_content = {
         "zh": {
             "title": "第一个博客",
             "intro": "欢迎来到我的第一个博客。我想用以下的空间来谈谈我写博客的动机以及所写博客的种类。",
-            "motivation": [""],
+            "motivation": ["见以下:"],
 
             "body": ["这周我在编写个人网站时有了加一个“博客”分区的想法。我想用它来分享我的一些个人经历以及对我们每天面对问题的理解。"
                 + "我觉得这是一个很好的方式来分享我的兴趣是什么以及更重要的是我是怎样分配我的时间的。"
