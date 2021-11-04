@@ -196,12 +196,12 @@ var blog_content = {
             + "     <img src=\"/static/home/grad5.png\" style=\" width: 70%; margin: 20px\">"
             + "</div>"
             + "每行为一个训练例子。"
-            + "<p style=\"margin-top: 30px\">Observe that:</p>"
+            + "<p style=\"margin-top: 30px\">观察发现:</p>"
             + "<div style=\"text-align:center;\">"
             + "     <img src=\"/static/home/grad6.png\" style=\" width: 70%; margin: 20px\">"
             + "</div>"
             + "到此，我们已经概述了所有用软件实现梯度下降的理论背景。"
-            + "<h3 style=\"margin-top: 40px\">Implementation</h3>"
+            + "<h3 style=\"margin-top: 40px\">软件实现</h3>"
             + "<hr>"
             + "以下是个在线性回归中运用梯度下降的算法:"
             + "<div style=\"text-align:center;\">"
@@ -237,8 +237,8 @@ var blog_content = {
             + "</div>"
             + "<h3 style=\"margin-top:30px\">项目</h3>"
             + "<hr>"
-            + "为了来更全面的展现梯度下降实际的应用，我做了两个小项目 - 一个是 <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/housing%20-%20linReg.ipynb\">房屋价格预测的线性回归</a>"
-            + " 另一个是 <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20logReg.ipynb\">心脏病预测的逻辑回归</a>. "
+            + "为了来更全面的展现梯度下降实际的应用，我做了两个小项目 - 一个是 <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/housing%20-%20linReg.ipynb\">房屋价格预测器（线性回归）</a>"
+            + " 另一个是 <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20logReg.ipynb\">心脏病预测器（逻辑回归）</a>. "
             + "我同时还用了像sklearn 模型 和 正规方程(normal equation) 等方法来测试我的梯度下降算法的输出。正如在github上展示的那样，它们的输出是一样的。"]
         }
     }
