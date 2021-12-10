@@ -16,6 +16,7 @@ urlpatterns = [
     path("project/website/<str:lang>", views.website, name="website"),
     path("project/constructor/<str:lang>", views.constructor, name="ctor"),
     path("project/algorithm/<str:lang>", views.algorithm, name="algorithm"),
+    path("project/ml/<str:lang>", views.ml, name="ml"),
     path("project/gameoflife/<str:lang>", views.gameOfLife, name="gameOfLife"),
     path("project/testing/<str:lang>", views.testing, name="testing"),
     path("project/classifier/<str:lang>", views.classifier, name="classifier"),

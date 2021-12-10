@@ -89,6 +89,13 @@ def gameOfLife(request, lang):
         "proj_img": "gameOfLife.jpeg"
     })
 
+def ml(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "ml",
+        "proj_img": "ml.jpeg"
+    })
+
 def testing(request, lang):
     return render(request, "home/project.html", {
         "lang": lang,
