@@ -124,6 +124,15 @@ function changeLangProject(type) {
     for (i = 0; i < names.length; i++) {
         names[i].textContent = project_names[type][i];
     }
+    var titles = document.getElementsByClassName('proj_titles');
+    var proj_titles = {
+        "en": ["Side Projects:", "Coursework:"],
+        "zh": ["课外项目:", "课内作业:"]
+    }
+    console.log(titles.length)
+    for (i = 0; i < titles.length; i++) {
+        titles[i].innerHTML = proj_titles[type][i];
+    }
 }
 
 var project_names_font = {
@@ -133,12 +142,12 @@ var project_names_font = {
 
 var project_names = {
     "en": [
-        "Personal Website", "Constructor", "Fitness App", "Conway's Game of Life", 
-        "Testing Tools", "Creature Classifier", "Algorithm (Leetcode)"
+        "Personal Website", "Fitness App", "Machine Learning", "Algorithm (Leetcode)", "Constructor", "Conway's Game of Life", 
+        "Testing Tools", "Creature Classifier"
     ] ,
     "zh": [
-        "个人网站", "建造者", "健身软件", "生命游戏", 
-        "测试工具", "生物鉴别器", "算法（Leetcode)"
+        "个人网站", "健身软件", "机器学习", "算法（Leetcode)", "建造者", "生命游戏", 
+        "测试工具", "生物鉴别器"
     ]
 }
 

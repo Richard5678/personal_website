@@ -6,7 +6,15 @@ function changeLangProj(proj, type) {
         contents[i].innerHTML = algo_content[proj][type]["content"][i];
         console.log(algo_content[proj][type]["content"][i]);
     }
-
+    var titles = document.getElementsByClassName('proj_titles');
+    var proj_titles = {
+        "en": ["Side Projects:", "Coursework:"],
+        "zh": ["课外项目:", "课内作业:"]
+    }
+    console.log(titles.length)
+    for (i = 0; i < titles.length; i++) {
+        titles[i].innerHTML = proj_titles[type][i];
+    }
     document.getElementById('img').src = algo_content[proj]["img"];
 
     var impl = document.getElementById('project_impl');

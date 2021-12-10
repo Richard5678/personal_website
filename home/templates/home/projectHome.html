@@ -26,6 +26,7 @@
         });
     </script>
     <div class="body">
+        <h1 class="proj_titles">Side Projects:</h1>
         <ul id="projects">
             <li class="proj_li">
                 <div class="wrap">
@@ -37,23 +38,46 @@
                     </a>
                 </div>
             </li>
-            
-            <li class="proj_li">
-                <div class="wrap">
-                    <a href="{% url 'ctor' lang %}">
-                        
-                            <img class="wrap_img" src="{% static 'home/ctor.jpeg' %}" />
-                            <div class="img__description"><h3 class="projectNames" id="m">Constructor</h3></div>
-                        
-                    </a>
-                </div>
-            </li>
             <li class="proj_li">
                 <div class="wrap">
                     <a href="{% url 'fitness' lang %}">
                         
                             <img class="wrap_img" src="{% static 'home/fitness.png' %}" />
                             <div class="img__description"><h3 class="projectNames" id="m">Fitness App</h3></div>
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li"> 
+                <div class="wrap">
+                    <a href="{% url 'algorithm' lang %}">
+                        <div >
+                            <img class="wrap_img" src="{% static 'home/ml.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Machine Learning</h3></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="proj_li"> 
+                <div class="wrap">
+                    <a href="{% url 'algorithm' lang %}">
+                        <div >
+                            <img class="wrap_img" src="{% static 'home/algo.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Algorithm (Leetcode)</h3></div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <hr>
+        <h1 style="margin-top:50px" class="proj_titles">Coursework:</h1>
+        <ul id="projects">
+            <li class="proj_li">
+                <div class="wrap">
+                    <a href="{% url 'ctor' lang %}">
+                        
+                            <img class="wrap_img" src="{% static 'home/ctor.jpeg' %}" />
+                            <div class="img__description"><h3 class="projectNames" id="m">Constructor</h3></div>
                         
                     </a>
                 </div>
@@ -85,16 +109,6 @@
                             <img class="fit_img" src="{% static 'home/classifier.png' %}" />
                             <div class="img__description"><h3 class="projectNames" id="m">Creature Classifier</h3></div>
                         
-                    </a>
-                </div>
-            </li>
-            <li class="proj_li"> 
-                <div class="wrap">
-                    <a href="{% url 'algorithm' lang %}">
-                        <div >
-                            <img class="wrap_img" src="{% static 'home/algo.jpeg' %}" />
-                            <div class="img__description"><h3 class="projectNames" id="m">Algorithm (Leetcode)</h3></div>
-                        </div>
                     </a>
                 </div>
             </li>
