@@ -1060,6 +1060,7 @@ var algo_content = {
             + "</ol>", 
             "无"],
             "implementation": ["详情见<a href=\"\">github</a>。"]
-        }
+        },
+        "img": "/static/home/ml.jpeg"
     }
 }
