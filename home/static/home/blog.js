@@ -671,7 +671,7 @@ var blog_content = {
                 + "需要注意的是我们用均方差作为每次分流的成本函数所以均方差越小，那么分流就越好。直观上来讲，我们希望每个小组的数据的残差更靠近彼此而均方差正是在目标变量靠近彼此时更小。"
                 + "在找到最佳分界点后，我们将节点初始化并加入关于分界点的信息(58 - 62行)。"
                 + "<div style=\"text-align:center;\">"
-                + "     <img src=\"/static/home/gradintBoosting2.png\" style=\" width: 70%; height = 50%; margin: 20px\">"
+                + "     <img src=\"/static/home/gradientBoosting2.png\" style=\" width: 70%; height = 50%; margin: 20px\">"
                 + "</div>"
                 + "之后我们需要决定我们是否想要通过搭建所有子树来延展整个决策树(66 - 69行)。我们只在所有左右两个子群都有至少一个例子"
                 + "并且它们的加权基尼系数平均数小于现在的节点的基尼系数时才继续大家子树。" 
