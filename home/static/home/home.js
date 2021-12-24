@@ -142,11 +142,11 @@ var project_names_font = {
 
 var project_names = {
     "en": [
-        "Personal Website", "Fitness App", "Machine Learning", "Algorithm (Leetcode)", "Constructor", "Conway's Game of Life", 
+        "Personal Website", "Fitness App", "Machine Learning", "Gomoku AI", "Algorithm (Leetcode)", "Constructor", "Conway's Game of Life", 
         "Testing Tools", "Creature Classifier"
     ] ,
     "zh": [
-        "个人网站", "健身软件", "机器学习", "算法（Leetcode)", "建造者", "生命游戏", 
+        "个人网站", "健身软件", "机器学习", "五子棋人工智能", "算法（Leetcode)", "建造者", "生命游戏", 
         "测试工具", "生物鉴别器"
     ]
 }

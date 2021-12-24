@@ -96,6 +96,13 @@ def ml(request, lang):
         "proj_img": "ml.jpeg"
     })
 
+def gomoku(request, lang):
+    return render(request, "home/project.html", {
+        "lang": lang,
+        "proj": "gomoku",
+        "proj_img": "gomoku.png"
+    })
+
 def testing(request, lang):
     return render(request, "home/project.html", {
         "lang": lang,
