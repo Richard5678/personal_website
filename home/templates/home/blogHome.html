@@ -4,9 +4,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             changeLangNav("{{ lang }}");
         });
+        
     </script>
     <div class="body">
-        {% if en %}
+        <!-- {% if en %}
             {% for article in articles reversed %} 
                 <div class="blog-section">
                     <h1> <a href="{% url 'article' article.id lang %}" id="article{{article.id}}">{{ article.titleEn }}</a></h1>
@@ -28,7 +29,59 @@
                     <hr style="height: 1px; margin-top:50px">
                 </div>
             {% endfor %}
+        {% endif %}  -->
+        {% if en %}
+        <div class="blog-section">
+            <h1> <a href="{% url 'article' '8' lang %}" id="article6">Implementing Gradient Boosting Tree from scratch in Python</a></h1>
+            <br> 12/10/2021
+            <div class="blog-intro">
+                This blog covers the theoretical framework behind Gradient Boosting Tree and its implementation in Python without using any libraries that directly implement it.
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div> 
+        <div class="blog-section">
+            <h1> <a href="{% url 'article' '7' lang %}" id="article6">Implementing random forest from scratch in Python</a></h1>
+            <br> 12/7/2021
+            <div class="blog-intro">
+                This article is a walk-through of an implementation of random forest classifier without using any implementations from existing libraries.
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div> 
+        <div class="blog-section">
+            <h1> <a href="{% url 'article' '6' lang %}" id="article6">Gradient Descent in Machine Learning</a></h1>
+            <br> 11/04/2021
+            <div class="blog-intro">
+                This article covers the implementation and theoretical framework of gradient descent. Topics such as feature scaling and cross-validation are also included to improve testing and training.
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div> 
+        {% else %}
+        <div class="blog-section">
+            <h1> <a href="{% url 'article' '8' lang %}" id="article6">用Python从零来开始软件实现梯度提升树</a></h1>
+            <br> 12/10/2021
+            <div class="blog-intro">
+                这篇博客概述了梯度提升树的理论框架以及其Python的软件实现(没有运用任何已有的直接实现其的函式库)。
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div> 
+        <div class="blog-section">
+        <h1> <a href="{% url 'article' '7' lang %}" id="article6">用Python从零开始软件实现随机森林</a></h1>
+            <br> 12/7/2021
+            <div class="blog-intro">
+                这篇文章展示了一个随机森林分类器的实现（没有运用任何已有的直接实现随机森林的函式库)。
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div> 
+        <div class="blog-section">
+            <h1> <a href="{% url 'article' '6' lang %}" id="article6">机器学习中的梯度下降</a></h1>
+            <br> 11/04/2021
+            <div class="blog-intro">
+                这篇博客概述了梯度下降(Gradient Descent) 的理论框架及软件实现。文章还包含了特征缩放(Feature Scaling),  交叉验证(Cross Validation) 等主体还提升测试和训练效率。
+            </div>
+            <hr style="height: 1px; margin-top:50px">
+        </div>  
         {% endif %} 
+        
     </div>
 
     
