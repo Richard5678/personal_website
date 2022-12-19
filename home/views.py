@@ -18,7 +18,7 @@ def index(request, lang):
 
 def blog(request, lang):
     return render(request, "home/blogHome.html", {
-        "articles": Article.objects.all(),
+        #"articles": Article.objects.all(),
         "lang": lang,
         "en": lang=='en',
         "section": "blog"
