@@ -1,14 +1,15 @@
 {% extends "home/layout.html" %}
 {% block body %}
     <script>
+        console.log("{{section}}");
         document.addEventListener('DOMContentLoaded', () => {
-            changeLangBlog("{{ blog.idName }}", "{{ lang }}");
+            changeLangBlog("{{ section }}", "{{ lang }}");
         });
     </script>
     <div class="body">
         <div class="container body">
             <h1 id="blog_title"></h1>
-            <br>{{ blog.date }}
+            <br><h2 class="blog_date"></h2>
             <hr>
     
             <div class="blog-text"> 

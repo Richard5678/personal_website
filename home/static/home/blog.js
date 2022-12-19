@@ -6,6 +6,11 @@ function changeLangBlog(blog, type) {
     console.log(blog)
     title.innerHTML = blog_content[blog][type]["title"];
 
+    var date = document.getElementsByClassName('blog_date');
+    for (i = 0; i < date.length; i++) {
+        date[i].innerHTML = blog_content[blog]["date"];
+    }
+
     var intro = document.getElementsByClassName('blog_intro');
     for (i = 0; i < intro.length; i++) {
         intro[i].innerHTML = blog_content[blog][type]["intro"];
@@ -24,7 +29,8 @@ function changeLangBlog(blog, type) {
 }
 
 var blog_content = {
-    "first": {
+    first: {
+        "date": "11/01/2021",
         "en": {
             "title": "First Post",
             "intro": "Welcome to my first post! I just want to use the space below to talk about some of the motivations of writing blogs as well as some types of blogs I will be writing about.",
@@ -81,6 +87,7 @@ var blog_content = {
         }
     },
     "gradDescent": {
+        "date": "11/04/2021",
         "en": {
             "title": "Gradient Descent in Machine Learning",
             "intro": "This article covers the implementation and theoretical framework of gradient descent. Topics such as feature scaling and cross-validation are also included to improve testing and training."
@@ -244,6 +251,7 @@ var blog_content = {
         }
     },
     "randomForest": {
+        "date": "12/07/2021",
         "en": {
             "title": "Implementing Random Forest from scratch in Python",
             "intro": "This article is a walk-through of an implementation of random forest classifier without using any implementations from existing libraries.",
@@ -493,6 +501,7 @@ var blog_content = {
         }
     },
     "gradientBoosting": {
+        "date": "12/01/2021",
         "en": {
             "title": "Implementing Gradient Boosting Tree from scratch in Python",
             "intro": "This blog covers the theoretical framework behind Gradient Boosting Tree and its implementation in Python without using any libraries that directly implement it.",

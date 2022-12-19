@@ -43,11 +43,12 @@ def first(request, lang):
     })
 
 def article(request, article_id, lang):
-    article = Article.objects.get(pk=article_id)
-    return render(request, f"home/blog.html", {
+    #article = Article.objects.get(pk=article_id)
+    return render(request, "home/blog.html", {
         "lang": lang,
-        "section": article.idName,
-        "blog": article
+        #"section": article.idName,
+        "section": article_id
+        #"blog": article
     })
 
 
