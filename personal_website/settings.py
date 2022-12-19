@@ -32,10 +32,10 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#CSRF_COOKIE_SECURE = True
-#SESSION_COOKIE_SECURE = True
-#DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
+#DEBUG = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'False'
 
 #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
