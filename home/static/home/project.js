@@ -1044,8 +1044,8 @@ var algo_content = {
                         + "<ol>"
                         + "     <li>Linear Regression: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/housing%20-%20linReg.ipynb\">github</a></li>"
                         + "     <li>Logistic Regression: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20logReg.ipynb\">github</a></li>"
-                        + "     <li>Random Forest: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20random%20forest.ipynb\">github</a>   <a href=\"/blog/3/en\">blog</a></li>"
-                        + "     <li>Gradient Boosting Tree: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20gradient%20boosted%20tree.ipynb\">github</a>   <a href=\"/blog/4/en\">blog</a></li>"
+                        + "     <li>Random Forest: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20random%20forest.ipynb\">github</a>   <a href=\"/blog/randomForest/en\">blog</a></li>"
+                        + "     <li>Gradient Boosting Tree: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20gradient%20boosted%20tree.ipynb\">github</a>   <a href=\"/blog/gradientBoosting/en\">blog</a></li>"
                         + "</ol>", 
                         "None"],
             "implementation": ["See <a href=\"https://github.com/Richard5678/Machine-Learning\">github</a> for details."]
