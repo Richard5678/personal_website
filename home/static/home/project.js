@@ -1055,8 +1055,8 @@ var algo_content = {
             + "<ol>"
             + "     <li>线性回归: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/housing%20-%20linReg.ipynb\">github</a></li>"
             + "     <li>罗辑回归: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20logReg.ipynb\">github</a></li>"
-            + "     <li>随机森林: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20random%20forest.ipynb\">github</a>   <a href=\"/blog/3/zh\">博客</a></li>"
-            + "     <li>梯度提升树: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20gradient%20boosted%20tree.ipynb\">github</a>   <a href=\"/blog/4/zh\">博客</a></li>"
+            + "     <li>随机森林: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20random%20forest.ipynb\">github</a>   <a href=\"/blog/randomForest/zh\">博客</a></li>"
+            + "     <li>梯度提升树: <a href=\"https://github.com/Richard5678/Machine-Learning/blob/main/heart%20problem%20-%20gradient%20boosted%20tree.ipynb\">github</a>   <a href=\"/blog/gradientBoosting/zh\">博客</a></li>"
             + "</ol>", 
             "无"],
             "implementation": ["详情见<a href=\"https://github.com/Richard5678/Machine-Learning\">github</a>。"]
